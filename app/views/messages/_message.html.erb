@@ -1,0 +1,11 @@
+<div id="<%= dom_id message %>" class='py-2'>
+  <p>
+    <strong>Body:</strong>
+    <%= message.body %>
+  </p>
+  <p>
+    <%= button_to "Edit this message", edit_message_path(message), method: :post, class: 'bg-amber-500 hover:bg-amber-700 text-white font-bold py-1 px-1 rounded mb-1' %>
+    <%= button_to "Destroy this message", message, method: :delete, class: 'bg-amber-500 hover:bg-amber-700 text-white font-bold py-1 px-1 rounded' %>
+  </p>
+
+</div>

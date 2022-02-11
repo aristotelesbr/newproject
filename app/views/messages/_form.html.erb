@@ -1,0 +1,22 @@
+<%= form_with(model: message) do |form| %>
+  <% if message.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+        <% message.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='text-black'>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit 'Salvar', class: "bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded" %>
+  </div>
+<% end %>
